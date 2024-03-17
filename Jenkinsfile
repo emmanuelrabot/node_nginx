@@ -17,7 +17,7 @@ node {
     }
 
     stage ('Push') {
-        docker.withRegistry('http://localhost:5000', 'reg1') {
+        docker.withRegistry('http://localhost:5000') {
             app.push 'latest'
         }
     }
