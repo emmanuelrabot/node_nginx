@@ -15,4 +15,10 @@ node {
         sh 'curl http://localhost:49152/'
         }
     }
+
+    stage ('Push') {
+        docker.withRegistry('http://localhost:5000', 'reg1') {
+            app.push 'latest'
+        }
+    }
 }
