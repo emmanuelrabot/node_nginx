@@ -10,9 +10,9 @@ node {
     }
 
     stage ('Run image') {
-        docker.image('erabot/nginx').withRun('-p 80:80') [ c ->
+        docker.image('erabot/nginx').withRun('-p 80:80') { c ->
         sh 'docker ps'
         sh 'curl localhost'
-        ]
+        }
     }
 }
